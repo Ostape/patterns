@@ -1,5 +1,5 @@
 package com.robosh.figures;
 
-interface Figure {
+public interface Figure {
     void show();
 }
