@@ -1,18 +1,15 @@
 package com.robosh;
 
-import java.util.Arrays;
-
 public class Board {
 
-    public char []state = {' ', ' ', ' ',
-            ' ', ' ', ' ',
-            ' ', ' ', ' '};
-    public char[] charArray ={ 'a', 'b', 'c', 'd', 'e' };
+    public char []state;
     private final int cellStart = 0;
-    private final int cellEcnds = 8;
+    private final int cellEnds = 9;
 
     public Board(){
-
+        state =  new char[] {' ', ' ', ' ',
+                ' ', ' ', ' ',
+                ' ', ' ', ' '};
     }
 
     public boolean checkSell(int indexI){
@@ -53,7 +50,7 @@ public class Board {
         StringBuilder string = new StringBuilder();
         string.append("---------\n");
 
-        for (int i = 0; i < 9; i++){
+        for (int i = cellStart; i < cellEnds; i++){
 
             if (i == 0 || i == 3 || i == 6){
                 string.append("| ");
@@ -67,6 +64,19 @@ public class Board {
 
         string.append("---------\n");
         return string.toString();
+    }
+
+    public Memento save(){
+        char []state2 = new char[9];
+        for (int i = 0; i < 9; i++){
+            state2[i] = state[i];
+        }
+        return new Memento(state2);
+    }
+
+    public void undoToLastSave(Object obj) {
+        Memento memento = (Memento) obj;
+        state = memento.getBoard();
     }
 }
 

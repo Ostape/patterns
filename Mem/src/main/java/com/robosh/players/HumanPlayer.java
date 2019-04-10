@@ -1,39 +1,35 @@
 package com.robosh.players;
 
 import com.robosh.Board;
-
 import java.util.Scanner;
 
-public class HumanPlayer extends Player {
+public class HumanPlayer  {
 
+    private char XO;
     private Scanner scan;
 
-    public void input() {
-        inputHuman();
-    }
-
-    public HumanPlayer(char XO, Board board){
+    public HumanPlayer(char XO){
         scan = new Scanner(System.in);
         this.XO = XO;
-        this.board = board;
     }
 
-    private void inputHuman(){
+    public void inputHuman(Board board){
         int indexI;
         do{
-            System.out.println("Enter the coordinates: ");
+            System.out.println("enter coordinates (integer)");
+            String input = scan.nextLine();
 
-            while (!scan.hasNextInt()) {
-                scan.nextLine();
-                System.out.println("You should enter numbers!");
-            }
-            indexI =  scan.nextInt() - 1;
-            scan.nextLine();
-            if(board.checkSell(indexI)){
-                break;
+            try {
+                indexI = Integer.parseInt(input) - 1;
+                if (board.checkSell(indexI)) {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Wrong input");
             }
 
         } while (true);
         board.addChar(XO,indexI);
     }
+
 }
