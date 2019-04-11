@@ -1,7 +1,8 @@
 package com.robosh;
 
 public class Firmicutes implements Bacteria {
-    public void showBacteria(String nameBacteria, String colony) {
-        System.out.println("Firmicutes name is: " + nameBacteria + ", it`s colony" + colony);
+    private String colony= "Mars";
+    public void showBacteria(int yearsLife) {
+        System.out.println("Firmicutes lives: " + yearsLife + ", it`s colony " + colony);
     }
 }

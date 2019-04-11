@@ -21,6 +21,7 @@ public class BacteriaFactory {
 
                 case "Firmicutes":
                     bacteria = new Firmicutes();
+                    break;
 
                 case "Spirochaetes":
                     bacteria = new Spirochaetes();
