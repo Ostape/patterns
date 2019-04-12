@@ -9,11 +9,4 @@ public abstract class Expression implements MathOperation {
         this.rightExpression = rightExpression;
     }
 
-    public MathOperation getLeftExpression() {
-        return leftExpression;
-    }
-
-    public MathOperation getRightExpression() {
-        return rightExpression;
-    }
 }

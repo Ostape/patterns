@@ -4,24 +4,24 @@ import com.robosh.composite.*;
 
 public class MainRunner {
     public static void main(String[] args) {
-        Composite composite1 = new Composite();
-        Composite composite2 = new Composite();
 
-        composite1.addComponent(new Plus( new Digit(1),new Digit(5)));
-        composite1.addComponent(new Multiply(new Digit(4), new Digit(5)));
-
-        composite2.addComponent(new Plus(new Digit(3), new Digit(5)));
-        composite2.addComponent(new Multiply(new Digit(1), new Digit(4)));
-
-        Composite mainComposite = new Composite();
-        mainComposite.addComponent(composite1);
-        mainComposite.addComponent(composite2);
-
-        int number = mainComposite.executeOperation();
-        System.out.println(number);
+        //(1+2)*4+5*(3+6) = 57
+        int k = composite(1, 2, 4, 5, 3, 6);
+        System.out.println(k);
     }
 
-    private Composite getNumber(){
+    private static int composite(int a, int b, int c, int d, int e, int m) {
+        MathOperation mathOperation = new Plus(
+            new Multiply(
+                    new Plus(new Digit(a), new Digit(b)),
+                    new Digit(c)
+            ),
 
+            new Multiply(
+                    new Plus(new Digit(m), new Digit(e)),
+                    new Digit(d)
+            )
+        );
+        return mathOperation.executeOperation();
     }
 }
