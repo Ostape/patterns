@@ -1,8 +1,8 @@
 package com.robosh;
 
-import com.robosh.straregy.Fly;
-import com.robosh.straregy.FlyWalk;
-import com.robosh.straregy.Walk;
+import com.robosh.moves.Fly;
+import com.robosh.moves.FlyWalk;
+import com.robosh.moves.Walk;
 
 import java.util.ArrayList;
 import java.util.List;

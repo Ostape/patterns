@@ -1,7 +1,7 @@
 package com.robosh;
 
-import com.robosh.straregy.Fly;
-import com.robosh.straregy.StrategyAction;
+import com.robosh.moves.Fly;
+import com.robosh.moves.StrategyAction;
 
 public class StrategyHero {
     private StrategyAction strategyAction;

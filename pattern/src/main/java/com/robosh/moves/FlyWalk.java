@@ -1,4 +1,4 @@
-package com.robosh.straregy;
+package com.robosh.moves;
 
 public class FlyWalk implements StrategyAction {
     public void makeAction() {
