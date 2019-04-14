@@ -16,6 +16,6 @@ public class WikiFactory {
     }
 
     public WikiPage getNotChangedWikiPage() {
-        return wikiPage;
+        return (WikiPage) wikiPage.copy();
     }
 }

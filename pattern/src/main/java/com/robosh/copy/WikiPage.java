@@ -45,6 +45,7 @@ public class WikiPage implements Copyable{
     }
 
     public Copyable copy() {
-        return  new WikiPage(id, title, text);
+        WikiPage copy = new WikiPage(id, title, text);
+        return copy;
     }
 }
