@@ -1,17 +1,16 @@
 package com.robosh;
 
 import com.robosh.states.Created;
-import com.robosh.states.TrainingGrant;
 
 public class OrderApp {
     public static void main(String[] args) {
-        OrderTrainingGrant orderTrainingGrant = new OrderTrainingGrant();
-        TrainingGrant trainingGrant = new Created();
-        orderTrainingGrant.setTrainingGrant(trainingGrant);
+       TrainingGrant grant = new TrainingGrant(new Created(), "harvard grant");
 
-        for (int i = 0; i < 6; i++){
-            orderTrainingGrant.showState();
-            orderTrainingGrant.nextState();
-        }
+       grant.create();
+       grant.underReview();
+       grant.postone();
+       grant.withdrawn();
+       grant.confirm();
+       grant.reject();
     }
 }
