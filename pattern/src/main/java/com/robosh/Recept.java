@@ -1,6 +1,6 @@
 package com.robosh;
 
-public class Recept implements DateRecept {
+public class Recept implements Copyable {
 
     private int year;
     private int month;
@@ -74,4 +74,10 @@ public class Recept implements DateRecept {
         this.month = month;
         this.year = year;
     }
+
+    public Object copy() {
+        return (Recept)new Recept(year,month,day,doctorName,patientName);
+    }
+
+
 }
