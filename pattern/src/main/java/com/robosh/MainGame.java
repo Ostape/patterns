@@ -1,36 +1,26 @@
 package com.robosh;
 
+import com.robosh.characters.Harpy;
+import com.robosh.characters.Heroes;
+import com.robosh.characters.Orc;
+import com.robosh.characters.Witch;
 import com.robosh.moves.Fly;
 import com.robosh.moves.FlyWalk;
 import com.robosh.moves.Walk;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainGame {
     public static void main(String[] args) {
-        List<StrategyHero> strategyHeroes = new ArrayList<StrategyHero>();
+        Heroes firstHero = new Orc("Dido", new Walk());
+        Heroes secondHero = new Witch("Yaga", new FlyWalk());
+        Heroes thirdHero = new Harpy("Harpiya", new Fly());
 
-        StrategyHero firstHero = new StrategyHero("орки");
-        StrategyHero secondHero = new StrategyHero("пегасы");
-        StrategyHero thirdHero = new StrategyHero("гарпии ");
+        firstHero.showAction();
+        secondHero.showAction();
+        thirdHero.showAction();
 
-        firstHero.setStrategyAction(new Walk());
-        secondHero.setStrategyAction(new FlyWalk());
-        thirdHero.setStrategyAction(new Fly());
-
-        System.out.println(firstHero);
-        firstHero.executeStratagy();
-
-        System.out.println(secondHero);
-        secondHero.executeStratagy();
-
-        System.out.println(thirdHero);
-        thirdHero.executeStratagy();
-
-
-        firstHero.makeMagic(true);
-        System.out.println(firstHero);
-        firstHero.executeStratagy();
+        System.out.println("Can Orc flying?");
+        firstHero.setMagic(true);
+        System.out.print("Yes, it can ");
+        firstHero.showAction();
     }
 }

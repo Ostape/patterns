@@ -2,8 +2,10 @@ package com.robosh.characters;
 
 import com.robosh.moves.StrategyAction;
 
-public class Witch implements StrategyAction {
-    public void makeAction() {
-        System.out.println("witch can walk and fly");
+public class Witch extends Heroes {
+
+    public Witch(String heroName, StrategyAction strategyAction) {
+        super(heroName, strategyAction);
     }
+
 }
